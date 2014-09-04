@@ -34,9 +34,9 @@ public class ApiTest {
         Api api = new Api();
         api.setBasePath(PATH);
 
-        RecordShop shop = api.getRecordShop();
+        RecordShop shop = api.getRecordShopByName("foo");
 
-        Assert.assertEquals("Reckless", shop.getName());
+        Assert.assertEquals("foo", shop.getName());
 
     }
 
@@ -45,7 +45,7 @@ public class ApiTest {
         Api api = new Api();
         api.setBasePath(PATH);
 
-        RecordShop shop = api.getRecordShop();
+        RecordShop shop = api.getRecordShopById(5678);
 
         Assert.assertEquals(new Integer(5678), shop.getStoreNumber());
 
